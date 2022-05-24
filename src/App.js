@@ -19,7 +19,7 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
-        <Route path="/purchase" element={<Purchase></Purchase>}></Route>
+        <Route path="/purchase/:toolsId" element={<Purchase></Purchase>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
