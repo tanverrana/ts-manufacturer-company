@@ -1,0 +1,56 @@
+[
+    {
+        "_id": "1",
+        "name": "Case",
+        "img": "https://i.pcmag.com/imagery/roundups/05hdyk7k8eQlymJjfyeSfwC-48.fit_lim.size_550x.jpg",
+        "details": "If you've built your own PC in the past, you know that having the right PC case can make or break the whole process. It's not just a question of fitting the parts inside—it's easy enough to match up the motherboard size, count the bays, and make sure the chassis has the front-panel ports you want.",
+        "price": 450,
+        "min_quantity": 15,
+        "available_quantity": 135
+    },
+    {
+        "_id": "2",
+        "name": "Motherboard",
+        "img": "https://www.pcworld.com/wp-content/uploads/2021/09/shutterstock_1391898425_motherboard-100900638-orig.jpg?quality=50&strip=all",
+        "details": "Modern motherboards are fairly resilient, but they’re not impervious to damage. So when your mobo appears unresponsive upon powering your system, it can cause momentary heart palpitations. Some mobos are pretty expensive, and even when they’re not, replacing one is more time consuming than other components.",
+        "price": 4500,
+        "min_quantity": 25,
+        "available_quantity": 145
+    },
+    {
+        "_id": "3",
+        "name": "Cooling (CPU, Chassis)",
+        "img": "https://i.pcmag.com/imagery/articles/056R8nfex00YePeydSXIxmj-17..v1649203875.jpg",
+        "details": "Processor cooling hardware—whether a simple stock air cooler or an elaborate liquid cooling system—is a vitally important part of any desktop PC. But shop around today, and you'll see an abundance, if not an overabundance, of CPU cooling options to buy. It's enough to trigger purchase paralysis among system builders and upgraders, new and experienced alike.",
+        "price": 550,
+        "min_quantity": 25,
+        "available_quantity": 115
+    },
+    {
+        "_id": "4",
+        "name": "PSU [Power Supply Unit]",
+        "img": "https://cdn.mos.cms.futurecdn.net/gQTGW2knAfjAzTjQpxXa2P-1200-80.jpg",
+        "details": "A power supply unit (PSU) converts mains AC to low-voltage regulated DC power for the internal components of a computer. Modern personal computers universally use switched-mode power supplies. Some power supplies have a manual switch for selecting input voltage, while others automatically adapt to the mains voltage.",
+        "price": 450,
+        "min_quantity": 15,
+        "available_quantity": 135
+    },
+    {
+        "_id": "5",
+        "name": "Storage Device",
+        "img": "https://s3.envato.com/files/313454252/112220%20(4).jpg",
+        "details": "Speed: Compared to NVMe SSDs, hard disk drives are painfully slow. While an NVMe SSD can reach read and write speeds of 3.5 GB/second, the average HDD speed crawls around 150 Mb/second. Form Factor: HDD uses legacy form factors.It is extremely difficult to build smaller HDDs.",
+        "price": 450,
+        "min_quantity": 15,
+        "available_quantity": 135
+    },
+    {
+        "_id": "6",
+        "name": "RAM [Memory]",
+        "img": "https://www.trustedreviews.com/wp-content/uploads/sites/54/2022/04/ezgif.com-gif-maker-18.jpg",
+        "details": "RAM (Random Access Memory) is the hardware in a computing device where the operating system (OS), application programs and data in current use are kept so they can be quickly reached by the device's processor. RAM is the main memory in a computer.",
+        "price": 950,
+        "min_quantity": 35,
+        "available_quantity": 155
+    }
+]
