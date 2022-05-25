@@ -1,17 +1,35 @@
 import React from 'react';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
+import Loading from '../Shared/Loading';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    if (user) {
-        console.log(user);
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    let signInErrorMessage;
+
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
+    if (error || gError) {
+        signInErrorMessage = <p className="text-red-500">{error?.message || gError?.message}</p>
+    }
+    if (gUser) {
+        console.log(user || gUser);
     }
 
     const onSubmit = data => {
-        console.log(data)
+        console.log(data);
+        signInWithEmailAndPassword(data.email, data.password)
     };
     return (
         <div className="flex h-screen justify-center items-center">
@@ -74,9 +92,11 @@ const Login = () => {
 
                             </label>
                         </div>
-
+                        {signInErrorMessage}
                         <input className="btn w-full max-w-xs" value="Login" type="submit" />
                     </form>
+                    <p>New To TS  Company <Link className="text-green-400" to="/register">Register Now</Link></p>
+
                     <div class="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
