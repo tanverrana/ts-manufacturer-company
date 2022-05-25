@@ -15,7 +15,15 @@ const Purchase = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data))
-    }, [])
+    }, []);
+
+    const handleOrder = event => {
+        event.preventDefault();
+        const quantity = event.target.quantity.value;
+        console.log(quantity);
+
+    }
+
     return (
         <div>
             <h2 className="text-center text-3xl text-primary font-bold">Purchase Your Products</h2>
@@ -35,11 +43,11 @@ const Purchase = () => {
                     </div>
                 </div>
             </div>
-            <form className="grid gird-cols-1 gap-3 justify-items-center">
+            <form onSubmit={handleOrder} className="grid gird-cols-1 gap-3 justify-items-center my-10">
                 <input type="text" name="name" placeholder="Your Name" class="input input-bordered w-full max-w-xs" />
                 <input type="email" name="email" placeholder="Your Email" class="input input-bordered w-full max-w-xs" />
-                <input type="text" name="toolsName" value={tool.name} disabled placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                <input type="text" name="quantity" value={tool.min_quantity} class="input input-bordered w-full max-w-xs" />
+                <input type="text" name="toolsName" defaultValue={tool.name} disabled placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                <input type="text" name="quantity" defaultValue={tool.min_quantity} class="input input-bordered w-full max-w-xs" />
                 <input type="number" name="phone" placeholder="Enter Your Phone" class="input input-bordered w-full max-w-xs" />
                 <input type="text" name="address" placeholder="Enter Your Address" class="input input-bordered w-full max-w-xs" />
                 <input type="submit" value="Purchase Now" class="btn btn-primary w-full max-w-xs" />
