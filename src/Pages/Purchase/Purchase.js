@@ -1,12 +1,16 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 
 const Purchase = () => {
     const { toolsId } = useParams();
     const [tool, setTool] = useState({});
+
+    const [user, loading, error] = useAuthState(auth);
 
 
 
@@ -44,8 +48,8 @@ const Purchase = () => {
                 </div>
             </div>
             <form onSubmit={handleOrder} className="grid gird-cols-1 gap-3 justify-items-center my-10">
-                <input type="text" name="name" placeholder="Your Name" class="input input-bordered w-full max-w-xs" />
-                <input type="email" name="email" placeholder="Your Email" class="input input-bordered w-full max-w-xs" />
+                <input type="text" name="name" disabled value={user?.displayName} class="input input-bordered w-full max-w-xs" />
+                <input type="email" name="email" disabled value={user?.email} class="input input-bordered w-full max-w-xs" />
                 <input type="text" name="toolsName" defaultValue={tool.name} disabled placeholder="Type here" class="input input-bordered w-full max-w-xs" />
                 <input type="text" name="quantity" defaultValue={tool.min_quantity} class="input input-bordered w-full max-w-xs" />
                 <input type="number" name="phone" placeholder="Enter Your Phone" class="input input-bordered w-full max-w-xs" />

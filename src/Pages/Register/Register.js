@@ -27,7 +27,7 @@ const Register = () => {
     if (error || gError || updateError) {
         signInErrorMessage = <p className="text-red-500">{error?.message || gError?.message || updateError?.message}</p>
     }
-    if (gUser) {
+    if (gUser || user) {
         console.log(user || gUser);
     }
 
