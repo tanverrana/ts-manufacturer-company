@@ -47,6 +47,7 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                toast("Your Order is now pending");
             })
 
 
