@@ -20,7 +20,7 @@ const AddReview = () => {
     };
     return (
         <div className="w-6/12  mx-auto">
-            <h2 className="text-center text-primary text-4xl font-bold">Please Add Review!!</h2>
+            <h2 className="text-center  text-xl font-bold">Please Add Review!!</h2>
             <div>
                 <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
 
