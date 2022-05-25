@@ -4,6 +4,7 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -16,6 +17,9 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const [token] = useToken(user || gUser);
+
     const navigate = useNavigate();
 
 
@@ -27,15 +31,16 @@ const Register = () => {
     if (error || gError || updateError) {
         signInErrorMessage = <p className="text-red-500">{error?.message || gError?.message || updateError?.message}</p>
     }
-    if (gUser || user) {
-        console.log(user || gUser);
+    if (token) {
+        navigate("/home");
+
     }
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         console.log("Update done");
-        navigate("/home");
+
     };
     return (
         <div className="flex h-screen justify-center items-center">
@@ -63,8 +68,6 @@ const Register = () => {
                             />
                             <label class="label">
                                 {errors.name?.type === 'required' && <span class="label-text-alt text-red-500">{errors.name.message}</span>}
-
-
 
                             </label>
                         </div>
@@ -118,8 +121,6 @@ const Register = () => {
                             <label class="label">
                                 {errors.password?.type === 'required' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
                                 {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
-
-
                             </label>
                         </div>
                         {signInErrorMessage}
