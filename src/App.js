@@ -11,6 +11,8 @@ import Portfolio from "./Pages/Portfolio/Portfolio";
 import Purchase from "./Pages/Purchase/Purchase";
 import AddReview from "./Pages/AddReview/AddReview";
 import RequireAuth from './Pages/Login/RequireAuth';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }
