@@ -10,9 +10,26 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?customer=${user.email}`)
-                .then(res => res.json())
-                .then(data => setOrders(data));
+            fetch(`http://localhost:5000/order?customer=${user.email}`, {
+                method: "GET",
+                headers: {
+                    "authorization": `Bearer ${localStorage.getItem("accessToken")}`
+                }
+            })
+                .then(res => {
+                    console.log("res", res);
+                    if (res.status === 401 || res.status === 403) {
+
+                    }
+                    else if () {
+                        //
+                    }
+                    return res.json()
+                })
+                .then(data => {
+
+                    setOrders(data)
+                });
         }
     }, [user])
     return (
