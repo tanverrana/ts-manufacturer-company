@@ -17,6 +17,9 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 import Users from './Pages/Dashboard/Users/Users';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
+import AddTool from './Pages/Dashboard/AddTools/AddTool';
+import ManageTools from './Pages/Dashboard/ManageTools/ManageTools';
+import ManageOrders from './Pages/Dashboard/ManageOrders/ManageOrders';
 
 function App() {
   return (
@@ -30,10 +33,13 @@ function App() {
         <Route path="/purchase/:toolsId" element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path="/dashboard" element={
           <RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<MyOrder></MyOrder>}></Route>
-          <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="myOrder" element={<MyOrder></MyOrder>}></Route>
+          <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="addReview" element={<AddReview></AddReview>}></Route>
+          <Route path="addTools" element={<AddTool></AddTool>}></Route>
           <Route path="users" element={<Users></Users>}></Route>
+          <Route path="manageTools" element={<ManageTools></ManageTools>}></Route>
+          <Route path="manageOrder" element={<ManageOrders></ManageOrders>}></Route>
         </Route>
         <Route path="/addReview" element={<AddReview></AddReview>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
