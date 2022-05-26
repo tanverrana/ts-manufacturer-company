@@ -13,7 +13,6 @@ const MyProfile = () => {
 
                     <thead>
                         <tr>
-
                             <th>Profile Name</th>
                             <th>Email</th>
 
