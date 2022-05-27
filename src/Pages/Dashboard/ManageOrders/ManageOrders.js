@@ -10,9 +10,28 @@ const ManageOrders = () => {
     return (
         <div>
             <h2>Manage All Orders:{orders.length}</h2>
-            <div>
-
-            </div>
+            <table className="table w-full">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Customer Name</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        orders.map((order, index) => <tr>
+                            <td>{index + 1}</td>
+                            <td>{order.customerName}</td>
+                            <td>{order.quantity}</td>
+                            <td>{order.price}</td>
+                            <td><button className="btn btn-info btn-sm">Delete Order</button></td>
+                        </tr>)
+                    }
+                </tbody>
+            </table>
         </div>
     );
 };
