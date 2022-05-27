@@ -7,6 +7,23 @@ const ManageOrders = () => {
             .then(res => res.json())
             .then(data => setOrders(data));
     }, []);
+
+    const handleDelete = id => {
+        const proceed = window.confirm("Are Your Sure for delete order");
+        if (proceed) {
+            const url = `http://localhost:5000/tool/${id}`
+            fetch(url, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = orders.filter(tool => tool._id !== id);
+                    setOrders(remaining);
+
+                    console.log(data);
+                })
+        }
+    }
     return (
         <div>
             <h2>Manage All Orders:{orders.length}</h2>
@@ -27,7 +44,7 @@ const ManageOrders = () => {
                             <td>{order.customerName}</td>
                             <td>{order.quantity}</td>
                             <td>{order.price}</td>
-                            <td><button className="btn btn-info btn-sm">Delete Order</button></td>
+                            <td><button onClick={() => handleDelete(order._id)} className="btn btn-info btn-sm">Delete Order</button></td>
                         </tr>)
                     }
                 </tbody>
