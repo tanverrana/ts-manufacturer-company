@@ -22,7 +22,7 @@ const ManageTools = () => {
     }
     return (
         <div>
-            <h2>Manage Tools</h2>
+            <h2 className="text-orange-500 text-3xl font-bold">Manage Tools</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid:cols-3 gap-10">
                 {
                     tools.map(tool => <div

@@ -26,7 +26,7 @@ const ManageOrders = () => {
     }
     return (
         <div>
-            <h2>Manage All Orders:{orders.length}</h2>
+            <h2 className="text-3xl font-bold text-orange-500">Manage All Orders</h2>
             <table className="table w-full">
                 <thead>
                     <tr>

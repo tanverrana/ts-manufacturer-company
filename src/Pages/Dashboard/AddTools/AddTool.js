@@ -22,7 +22,7 @@ const AddTool = () => {
     };
     return (
         <div>
-            <h2 className="text-3xl  text-primary font-bold"> Add a New Tool!!</h2>
+            <h2 className="text-3xl  text-orange-500 font-bold"> Add a New Tool!!</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="grid gird-cols-1 gap-3 justify-items-center my-10">
                 <input type="text" placeholder="Enter Tool Name" class="input input-bordered w-full max-w-xs" {...register("name", { required: true })} />
                 <textarea type="text" placeholder="Enter Tool Details" class="input input-bordered w-full max-w-xs" {...register("details", { required: true })} />
