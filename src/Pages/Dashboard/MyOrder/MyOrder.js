@@ -3,7 +3,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const MyOrder = () => {
@@ -59,7 +59,10 @@ const MyOrder = () => {
                                 <td>{order.toolsName}</td>
                                 <td>{order.quantity}</td>
                                 <td>{order.price}</td>
-                                <td>Blue</td>
+                                <td>
+                                    {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className="btn btn-xs btn-accent">Pay</button></Link>}
+                                    {(order.price && order.paid) && <button className="btn btn-xs btn-info">Paid</button>}
+                                </td>
                             </tr>)
                         }
 
