@@ -47,6 +47,7 @@ const MyOrder = () => {
                             <th>Name</th>
                             <th>Tool Name</th>
                             <th>Quantity</th>
+                            <th>Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -57,6 +58,7 @@ const MyOrder = () => {
                                 <td>{order.customerName}</td>
                                 <td>{order.toolsName}</td>
                                 <td>{order.quantity}</td>
+                                <td>{order.price}</td>
                                 <td>Blue</td>
                             </tr>)
                         }

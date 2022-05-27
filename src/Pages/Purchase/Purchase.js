@@ -34,6 +34,7 @@ const Purchase = () => {
             quantity,
             address,
             phone,
+            price: tool.price * quantity,
             customerName: user.displayName,
             customer: user.email,
         }
