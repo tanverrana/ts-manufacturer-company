@@ -1,3 +1,39 @@
+# TS Manufacturer Company
+Live Site [click here]().
+
+## Features Of My website
+* User Sign In & Register
+* Forget or Reset Password
+* Protected Route & Verify User Email
+* User Can Update Inventory Quantity
+* User Dashboard
+* Admin Dashboard
+* Admin can Add New Items.
+* Admin Can Mange Orders
+* User Can add review
+* Stripe Payment System
+
+
+## Using Technologies (Framework)
+* HTML
+* CSS
+* Tailwind
+* Daisy Ui
+* JavaScript
+* React
+* React Hooks
+* React Routes
+* Firebase
+* Mongodb Database
+* Node JS
+* Express JS
+* React Stripe
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
