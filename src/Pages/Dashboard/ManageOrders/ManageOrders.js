@@ -11,7 +11,7 @@ const ManageOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are Your Sure for delete order");
         if (proceed) {
-            const url = `http://localhost:5000/tool/${id}`
+            const url = `http://localhost:5000/order/${id}`
             fetch(url, {
                 method: "DELETE"
             })
