@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const AddTool = () => {
     const { register, handleSubmit } = useForm();
@@ -15,6 +16,7 @@ const AddTool = () => {
         })
             .then(res => res.json())
             .then(result => {
+                toast.success(`Successfully add tool `);
                 console.log(result);
             })
     };
