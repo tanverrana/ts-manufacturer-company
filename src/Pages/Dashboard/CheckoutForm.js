@@ -8,6 +8,7 @@ const CheckoutForm = ({ order }) => {
     const elements = useElements();
     const [cardError, setCardError] = useState("");
     const [success, setSuccess] = useState("");
+    const [transactionId, setTransactionId] = useState("");
     const [clientSecret, setClientSecret] = useState("");
 
     const { price, customer, customerName } = order;
@@ -69,6 +70,7 @@ const CheckoutForm = ({ order }) => {
         }
         else {
             setCardError("");
+            setTransactionId(paymentIntent.id);
             console.log(paymentIntent);
             setSuccess("Your Payment is completed");
         }
@@ -101,7 +103,10 @@ const CheckoutForm = ({ order }) => {
                 cardError && <p className="text-red-500">{cardError}</p>
             }
             {
-                success && <p className="text-green-500">{success}</p>
+                success && <div className="text-green-500">
+                    <p>{success}</p>
+                    <p>Transaction Id: <span className="text-info">{transactionId}</span></p>
+                </div>
             }
         </div>
     );
