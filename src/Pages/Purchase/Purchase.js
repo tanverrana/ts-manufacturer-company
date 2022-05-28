@@ -16,7 +16,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/tool/${toolsId}`;
+        const url = `https://glacial-lowlands-56001.herokuapp.com/tool/${toolsId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data))
@@ -38,7 +38,7 @@ const Purchase = () => {
             customerName: user.displayName,
             customer: user.email,
         }
-        fetch("http://localhost:5000/order", {
+        fetch("https://glacial-lowlands-56001.herokuapp.com/order", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -6,7 +6,7 @@ const AddTool = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/tool`;
+        const url = `https://glacial-lowlands-56001.herokuapp.com/tool`;
         fetch(url, {
             method: "POST",
             headers: {

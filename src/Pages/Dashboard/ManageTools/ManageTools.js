@@ -7,7 +7,7 @@ const ManageTools = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are Your Sure");
         if (proceed) {
-            const url = `http://localhost:5000/tool/${id}`
+            const url = `https://glacial-lowlands-56001.herokuapp.com/tool/${id}`
             fetch(url, {
                 method: "DELETE"
             })
