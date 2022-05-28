@@ -43,8 +43,11 @@ const ManageOrders = () => {
                             <td>{index + 1}</td>
                             <td>{order.customerName}</td>
                             <td>{order.quantity}</td>
-                            <td>{order.price}</td>
-                            <td><button onClick={() => handleDelete(order._id)} className="btn btn-info btn-sm">Delete Order</button></td>
+                            <td>${order.price}</td>
+                            <td>
+                                {(order.price && !order.paid) && <button onClick={() => handleDelete(order._id)} className="btn btn-info btn-sm">Delete Order</button>}
+                                {(order.price && order.paid) && <p className="text-xl text-green-500">Already Paid</p>}
+                            </td>
                         </tr>)
                     }
                 </tbody>
