@@ -67,10 +67,10 @@ const Portfolio = () => {
                     <p>⚫ Tailwind</p>
                     <p>⚫ Daisy UI</p>
                     <p>⚫ JavaScript</p>
-                    <p>⚫ React</p>
+                    <p>⚫ React JS</p>
                     <p>⚫ React Hook</p>
-                    <p>⚫ Node</p>
-                    <p>⚫ Express</p>
+                    <p>⚫ Node JS</p>
+                    <p>⚫ Express JS</p>
                     <p>⚫ MongoDb</p>
                     <p>⚫ Firebase</p>
                 </div>

@@ -12,7 +12,7 @@ const Tools = () => {
     }, [])
     return (
         <div>
-            <h2 className="text-3xl text-center text-primary font-bold">Total Tools:{tools.length}</h2>
+            <h2 className="text-4xl text-center text-primary font-bold">Tools</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid:cols-3 gap-7">
                 {
                     tools.slice(0, 6).map(tool => <Tool
