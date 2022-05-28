@@ -77,7 +77,7 @@ const Purchase = () => {
                 <input type="text" name="name" disabled value={user?.displayName} class="input input-bordered w-full max-w-xs" />
                 <input type="email" name="email" disabled value={user?.email} class="input input-bordered w-full max-w-xs" />
                 <input type="text" name="toolsName" defaultValue={tool.name} disabled placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                <input type="text" name="quantity" defaultValue={tool.min_quantity} class="input input-bordered w-full max-w-xs" />
+                <input type="number" min={tool.min_quantity} max={tool.available_quantity} name="quantity" defaultValue={tool.min_quantity} class="input input-bordered w-full max-w-xs" />
                 <input type="number" name="phone" placeholder="Enter Your Phone" class="input input-bordered w-full max-w-xs" />
                 <input type="text" name="address" placeholder="Enter Your Address" class="input input-bordered w-full max-w-xs" />
                 <input type="submit" value="Purchase Now" class="btn btn-primary w-full max-w-xs" />
